@@ -7,7 +7,7 @@ const tableData = data;
 function buttonHandler(){
     // Get the value property of the textbox element
     const input = d3.select('#datetime').property('value');
-
+	
     //filter out the data using an arrow function
     const filteredData = tableData.filter(sighting => (sighting.datetime == input));
 
@@ -28,6 +28,9 @@ function buttonHandler(){
         });
     } 
 }
+
+buttonHandler(); //load the table when the page is loaded
+d3.select('#datetime').property('value', '') //clear the default value
 
 //button-click listener
 const button = d3.select('#filter-btn');
